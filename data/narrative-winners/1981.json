@@ -1,0 +1,27 @@
+{
+  "year": 1981,
+  "winners": [
+    {
+      "name": "International Business Machines Corporation",
+      "ticker": "IBM",
+      "type": "stock",
+      "score": 90,
+      "weight": 0.35294117647058826
+    },
+    {
+      "name": "General Electric Company",
+      "ticker": "GE",
+      "type": "stock",
+      "score": 85,
+      "weight": 0.3333333333333333
+    },
+    {
+      "name": "Exxon Corporation",
+      "ticker": "XOM",
+      "type": "stock",
+      "score": 80,
+      "weight": 0.3137254901960784
+    }
+  ],
+  "generatedAt": "2026-02-13T11:58:44.107Z"
+}

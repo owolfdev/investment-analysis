@@ -1,0 +1,27 @@
+{
+  "year": 1987,
+  "winners": [
+    {
+      "name": "Microsoft Corporation",
+      "ticker": "MSFT",
+      "type": "stock",
+      "score": 85,
+      "weight": 0.3541666666666667
+    },
+    {
+      "name": "Walt Disney Company",
+      "ticker": "DIS",
+      "type": "stock",
+      "score": 80,
+      "weight": 0.3333333333333333
+    },
+    {
+      "name": "Coca-Cola Company",
+      "ticker": "KO",
+      "type": "stock",
+      "score": 75,
+      "weight": 0.3125
+    }
+  ],
+  "generatedAt": "2026-02-13T11:59:00.637Z"
+}

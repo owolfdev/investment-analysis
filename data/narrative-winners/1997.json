@@ -1,0 +1,27 @@
+{
+  "year": 1997,
+  "winners": [
+    {
+      "name": "Microsoft Corporation",
+      "ticker": "MSFT",
+      "type": "stock",
+      "score": 85,
+      "weight": 0.37117903930131
+    },
+    {
+      "name": "Intel Corporation",
+      "ticker": "INTC",
+      "type": "stock",
+      "score": 76,
+      "weight": 0.3318777292576419
+    },
+    {
+      "name": "Amazon.com, Inc.",
+      "ticker": "AMZN",
+      "type": "stock",
+      "score": 68,
+      "weight": 0.29694323144104806
+    }
+  ],
+  "generatedAt": "2026-02-13T05:45:19.260Z"
+}

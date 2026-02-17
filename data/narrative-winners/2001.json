@@ -1,0 +1,34 @@
+{
+  "year": 2001,
+  "winners": [
+    {
+      "name": "Berkshire Hathaway Inc.",
+      "ticker": "BRK.A",
+      "type": "stock",
+      "score": 85,
+      "weight": 0.2833333333333333
+    },
+    {
+      "name": "ExxonMobil Corporation",
+      "ticker": "XOM",
+      "type": "stock",
+      "score": 78,
+      "weight": 0.26
+    },
+    {
+      "name": "Wal-Mart Stores, Inc.",
+      "ticker": "WMT",
+      "type": "stock",
+      "score": 72,
+      "weight": 0.24
+    },
+    {
+      "name": "Gold",
+      "ticker": "GC",
+      "type": "commodity",
+      "score": 65,
+      "weight": 0.21666666666666667
+    }
+  ],
+  "generatedAt": "2026-02-13T05:30:59.406Z"
+}

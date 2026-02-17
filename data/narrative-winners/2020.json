@@ -1,0 +1,34 @@
+{
+  "year": 2020,
+  "winners": [
+    {
+      "name": "Zoom Video Communications, Inc.",
+      "ticker": "ZM",
+      "type": "stock",
+      "score": 85,
+      "weight": 0.2833333333333333
+    },
+    {
+      "name": "Tesla, Inc.",
+      "ticker": "TSLA",
+      "type": "stock",
+      "score": 78,
+      "weight": 0.26
+    },
+    {
+      "name": "Amazon.com, Inc.",
+      "ticker": "AMZN",
+      "type": "stock",
+      "score": 72,
+      "weight": 0.24
+    },
+    {
+      "name": "Bitcoin",
+      "ticker": "BTC",
+      "type": "crypto asset",
+      "score": 65,
+      "weight": 0.21666666666666667
+    }
+  ],
+  "generatedAt": "2026-02-13T05:43:53.585Z"
+}

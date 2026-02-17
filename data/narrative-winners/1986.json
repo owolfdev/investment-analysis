@@ -1,0 +1,34 @@
+{
+  "year": 1986,
+  "winners": [
+    {
+      "name": "Microsoft Corporation",
+      "ticker": "MSFT",
+      "type": "stock",
+      "score": 90,
+      "weight": 0.2727272727272727
+    },
+    {
+      "name": "Intel Corporation",
+      "ticker": "INTC",
+      "type": "stock",
+      "score": 85,
+      "weight": 0.25757575757575757
+    },
+    {
+      "name": "American Telephone and Telegraph Company",
+      "ticker": "T",
+      "type": "stock",
+      "score": 80,
+      "weight": 0.24242424242424243
+    },
+    {
+      "name": "General Electric Company",
+      "ticker": "GE",
+      "type": "stock",
+      "score": 75,
+      "weight": 0.22727272727272727
+    }
+  ],
+  "generatedAt": "2026-02-13T11:58:58.209Z"
+}

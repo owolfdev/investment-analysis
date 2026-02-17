@@ -1,0 +1,27 @@
+{
+  "year": 1991,
+  "winners": [
+    {
+      "name": "Microsoft Corporation",
+      "ticker": "MSFT",
+      "type": "stock",
+      "score": 85,
+      "weight": 0.37117903930131
+    },
+    {
+      "name": "IBM Corporation",
+      "ticker": "IBM",
+      "type": "stock",
+      "score": 76,
+      "weight": 0.3318777292576419
+    },
+    {
+      "name": "General Electric Company",
+      "ticker": "GE",
+      "type": "stock",
+      "score": 68,
+      "weight": 0.29694323144104806
+    }
+  ],
+  "generatedAt": "2026-02-13T05:44:50.792Z"
+}

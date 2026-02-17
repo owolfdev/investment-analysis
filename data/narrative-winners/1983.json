@@ -1,0 +1,34 @@
+{
+  "year": 1983,
+  "winners": [
+    {
+      "name": "Apple Computer Inc.",
+      "ticker": "AAPL",
+      "type": "stock",
+      "score": 85,
+      "weight": 0.256797583081571
+    },
+    {
+      "name": "Intel Corporation",
+      "ticker": "INTC",
+      "type": "stock",
+      "score": 88,
+      "weight": 0.26586102719033233
+    },
+    {
+      "name": "Hewlett-Packard Company",
+      "ticker": "HPQ",
+      "type": "stock",
+      "score": 80,
+      "weight": 0.24169184290030213
+    },
+    {
+      "name": "Oil (Crude)",
+      "ticker": "CL",
+      "type": "commodity",
+      "score": 78,
+      "weight": 0.23564954682779457
+    }
+  ],
+  "generatedAt": "2026-02-13T11:58:51.110Z"
+}

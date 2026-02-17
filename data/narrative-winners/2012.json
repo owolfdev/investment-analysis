@@ -1,0 +1,34 @@
+{
+  "year": 2012,
+  "winners": [
+    {
+      "name": "Apple Inc.",
+      "ticker": "AAPL",
+      "type": "stock",
+      "score": 85,
+      "weight": 0.2833333333333333
+    },
+    {
+      "name": "Google Inc.",
+      "ticker": "GOOGL",
+      "type": "stock",
+      "score": 78,
+      "weight": 0.26
+    },
+    {
+      "name": "Amazon.com Inc.",
+      "ticker": "AMZN",
+      "type": "stock",
+      "score": 72,
+      "weight": 0.24
+    },
+    {
+      "name": "Gold",
+      "ticker": "GC",
+      "type": "commodity",
+      "score": 65,
+      "weight": 0.21666666666666667
+    }
+  ],
+  "generatedAt": "2026-02-13T05:43:20.203Z"
+}

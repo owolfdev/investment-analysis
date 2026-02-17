@@ -1,0 +1,34 @@
+{
+  "year": 2014,
+  "winners": [
+    {
+      "name": "Apple Inc.",
+      "ticker": "AAPL",
+      "type": "stock",
+      "score": 85,
+      "weight": 0.2833333333333333
+    },
+    {
+      "name": "Alibaba Group Holding Limited",
+      "ticker": "BABA",
+      "type": "stock",
+      "score": 78,
+      "weight": 0.26
+    },
+    {
+      "name": "Exxon Mobil Corporation",
+      "ticker": "XOM",
+      "type": "stock",
+      "score": 72,
+      "weight": 0.24
+    },
+    {
+      "name": "Facebook, Inc.",
+      "ticker": "FB",
+      "type": "stock",
+      "score": 65,
+      "weight": 0.21666666666666667
+    }
+  ],
+  "generatedAt": "2026-02-13T05:43:28.240Z"
+}

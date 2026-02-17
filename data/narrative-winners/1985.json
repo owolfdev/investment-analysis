@@ -1,0 +1,34 @@
+{
+  "year": 1985,
+  "winners": [
+    {
+      "name": "International Business Machines Corporation",
+      "ticker": "IBM",
+      "type": "stock",
+      "score": 85,
+      "weight": 0.27419354838709675
+    },
+    {
+      "name": "General Electric Company",
+      "ticker": "GE",
+      "type": "stock",
+      "score": 80,
+      "weight": 0.25806451612903225
+    },
+    {
+      "name": "Intel Corporation",
+      "ticker": "INTC",
+      "type": "stock",
+      "score": 75,
+      "weight": 0.24193548387096775
+    },
+    {
+      "name": "Texas Instruments Incorporated",
+      "ticker": "TXN",
+      "type": "stock",
+      "score": 70,
+      "weight": 0.22580645161290322
+    }
+  ],
+  "generatedAt": "2026-02-13T11:58:55.164Z"
+}

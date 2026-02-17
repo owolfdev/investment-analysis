@@ -1,0 +1,34 @@
+{
+  "year": 1988,
+  "winners": [
+    {
+      "name": "International Business Machines Corporation",
+      "ticker": "IBM",
+      "type": "stock",
+      "score": 90,
+      "weight": 0.26239067055393583
+    },
+    {
+      "name": "The Coca-Cola Company",
+      "ticker": "KO",
+      "type": "stock",
+      "score": 85,
+      "weight": 0.2478134110787172
+    },
+    {
+      "name": "Exxon Corporation",
+      "ticker": "XOM",
+      "type": "stock",
+      "score": 88,
+      "weight": 0.2565597667638484
+    },
+    {
+      "name": "General Electric Company",
+      "ticker": "GE",
+      "type": "stock",
+      "score": 80,
+      "weight": 0.23323615160349853
+    }
+  ],
+  "generatedAt": "2026-02-13T11:59:03.214Z"
+}

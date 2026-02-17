@@ -1,0 +1,34 @@
+{
+  "year": 2011,
+  "winners": [
+    {
+      "name": "Apple Inc.",
+      "ticker": "AAPL",
+      "type": "stock",
+      "score": 85,
+      "weight": 0.2833333333333333
+    },
+    {
+      "name": "Mastercard Incorporated",
+      "ticker": "MA",
+      "type": "stock",
+      "score": 78,
+      "weight": 0.26
+    },
+    {
+      "name": "McDonald's Corporation",
+      "ticker": "MCD",
+      "type": "stock",
+      "score": 72,
+      "weight": 0.24
+    },
+    {
+      "name": "Gold",
+      "ticker": "GC",
+      "type": "commodity",
+      "score": 65,
+      "weight": 0.21666666666666667
+    }
+  ],
+  "generatedAt": "2026-02-13T05:43:14.611Z"
+}
