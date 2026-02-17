@@ -21,7 +21,7 @@ export interface PricePoint {
   close: number;
 }
 
-function barToRecord(row: { date: Date; open: number; high: number; low: number; close: number; volume?: number; adjClose?: number }): PriceBar {
+function barToRecord(row: { date: Date | string; open: number; high: number; low: number; close: number; volume?: number; adjClose?: number }): PriceBar {
   const dateStr = typeof row.date === "string" ? row.date.slice(0, 10) : new Date(row.date).toISOString().slice(0, 10);
   return {
     date: dateStr,
