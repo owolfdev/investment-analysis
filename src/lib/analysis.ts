@@ -50,7 +50,7 @@ export interface NarrativeHoldSummary {
 }
 
 /**
- * Simulate: invest $perWinner in each narrative winner of `year`, hold until end of `endYear`.
+ * Simulate: invest $perWinner in each narrative winner for investment year `year`, hold until end of `endYear`.
  * Optionally withdraw withdrawalPct% of portfolio value at end of each year from withdrawalStartYear through endYear.
  * Uses first available price on or after Jan 1 of `year` as buy; end-of-year prices for each year when simulating withdrawals.
  */

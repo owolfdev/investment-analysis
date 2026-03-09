@@ -28,6 +28,7 @@ interface SavePayload {
     startYearMax: number;
     endYear: number;
     perWinner: number;
+    perWinnerMonthly?: number | null;
     annualIncreasePct?: number | null;
     vehiclesPerYear?: number | null;
     withdrawalStartYear?: number | null;
@@ -99,7 +100,12 @@ function buildMarkdown(payload: SavePayload, savedFileName: string): string {
   lines.push(`- First investment year: ${params.startYearMin}`);
   lines.push(`- Last investment year: ${params.startYearMax}`);
   lines.push(`- Hold until year: ${params.endYear}`);
-  lines.push(`- $ per winner: ${params.perWinner}`);
+  if (params.perWinnerMonthly != null && Number.isFinite(params.perWinnerMonthly)) {
+    lines.push(`- $ per winner per month: ${params.perWinnerMonthly}`);
+    lines.push(`- Annualized $ per winner per year: ${params.perWinner}`);
+  } else {
+    lines.push(`- $ per winner per year: ${params.perWinner}`);
+  }
   lines.push(`- Annual increase (%): ${params.annualIncreasePct != null ? params.annualIncreasePct : 0}`);
   lines.push(`- Vehicles per year: ${params.vehiclesPerYear ?? "all"}`);
   if (params.withdrawalStartYear != null && params.withdrawalPct != null) {

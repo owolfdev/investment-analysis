@@ -1,6 +1,6 @@
 # Investment Path — Test simulation
 
-The **investment path** (UI: “Test investment path”) simulates a buy-and-hold strategy across multiple **cohorts** of narrative winners, with optional **withdrawals** from a chosen year until the terminal year. It answers: “If we invest $X in each narrative winner for years 2000–2005 and hold until 2020 (and optionally take y% out each year from 2010), what do we get?”
+The **investment path** (UI: “Test investment path”) simulates a buy-and-hold strategy across multiple **cohorts** of narrative winners, with optional **withdrawals** from a chosen year until the terminal year. The UI takes a **monthly** amount per winner, then annualizes it by multiplying by 12 before running the yearly simulation. It answers: “If we invest $X per month in each narrative winner for years 2000–2005 and hold until 2020 (and optionally take y% out each year from 2010), what do we get?”
 
 ## Inputs (and what they do)
 
@@ -9,7 +9,7 @@ The **investment path** (UI: “Test investment path”) simulates a buy-and-hol
 | **First investment year** | First year we buy: we invest in that year’s narrative winners at the start of this year. (Begin start.) |
 | **Last investment year** | Last year we add a new cohort: we invest in that year’s narrative winners at the start of this year. (End start.) |
 | **Hold until year** | Terminal year: all positions are valued (and optionally withdrawn from) at the **end** of this year. |
-| **$ per winner** | Dollar amount invested in **each** narrative winner, **per cohort**. Total invested = (number of cohorts) × (winners per year) × this amount. |
+| **$ per winner** | Dollar amount entered **per month** for **each** narrative winner. The UI annualizes it to `monthly × 12` before simulation. Total invested = (number of investment years) × (winners per year) × (`monthly × 12`). |
 | **Withdrawals start (year)** | Optional. First calendar year when we begin taking the withdrawal % out. Withdrawals happen at **end** of each year from this year through **Hold until year**. |
 | **Withdrawal %** | Optional. At the end of each year from “Withdrawals start” through “Hold until year”, we take this percentage of the **current portfolio value** (sell that much). The rest stays invested. |
 
@@ -18,11 +18,11 @@ The **investment path** (UI: “Test investment path”) simulates a buy-and-hol
 ## Flow (step by step)
 
 1. **UI** (`src/app/page.tsx`)  
-   User fills the six inputs and runs the simulation. Frontend calls `GET /api/analysis/narrative-hold-range` with query params.
+   User fills the inputs and runs the simulation. Frontend converts the monthly per-winner input to an annual amount with `monthly × 12`, then calls `GET /api/analysis/narrative-hold-range`.
 
 2. **API** (`src/app/api/analysis/narrative-hold-range/route.ts`)  
-   - Parses `startYearMin`, `startYearMax`, `endYear`, `perWinner`, and optionally `withdrawalStartYear`, `withdrawalPct`.  
-   - For each year `y` from `startYearMin` to `startYearMax`, calls `narrativeHoldToEnd(y, endYear, perWinner, options)`.  
+  - Parses `startYearMin`, `startYearMax`, `endYear`, `perWinner`, and optionally `withdrawalStartYear`, `withdrawalPct`. `perWinner` received here is already annualized by the UI.  
+  - For each investment year `y` from `startYearMin` to `startYearMax`, calls `narrativeHoldToEnd(y, endYear, perWinner, options)`.  
    - Aggregates: total invested, total value at end, total withdrawn (if any). When withdrawals are used, aggregates per-year withdrawals across all cohorts into `annualWithdrawals`.  
    - Returns `results` (one summary per cohort), `totalInvested`, `totalValueEnd`, `totalWithdrawn` (if withdrawal), `totalGain`, `totalGainPct`, and `annualWithdrawals` (if withdrawal).
 
@@ -45,7 +45,7 @@ The **investment path** (UI: “Test investment path”) simulates a buy-and-hol
 | `startYearMin` | Yes | First investment year (e.g. 2000). |
 | `startYearMax` | Yes | Last investment year (e.g. 2005). |
 | `endYear` | Yes | Hold until end of this year (e.g. 2020). |
-| `perWinner` | Yes | Dollars per narrative winner per cohort (e.g. 5000). |
+| `perWinner` | Yes | Dollars per narrative winner for each investment year (e.g. 5000). |
 | `withdrawalStartYear` | No | First year we take withdrawals (e.g. 2010). |
 | `withdrawalPct` | No | Percentage of portfolio withdrawn at end of each year from withdrawal start through endYear (e.g. 4). |
 

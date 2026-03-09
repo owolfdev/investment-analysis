@@ -1,6 +1,6 @@
 # Price Data — Flow & Schema
 
-Price data provides **historical daily OHLCV** for every ticker that appears in any narrative-winners file. It is used to reference prices against narrative winners—e.g. “invest $50 in each narrative winner of 2000 and hold until 2025; what is the total gain?”
+Price data provides **historical daily OHLCV** for every ticker that appears in any narrative-winners file. It is used to reference prices against narrative winners—e.g. “invest $50 in each narrative winner for investment year 2000 and hold until 2025; what is the total gain?”
 
 ## Purpose
 

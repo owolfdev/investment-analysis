@@ -26,7 +26,7 @@ function buildFallbackReport(payload) {
   lines.push("## Configuration");
   lines.push(`- Windows: ${payload.config.windowYears}-year, step ${payload.config.stepYears}-year`);
   lines.push(`- Start years: ${payload.config.windowStartMin} to ${payload.config.windowStartMax}`);
-  lines.push(`- Per-winner amount: $${payload.config.perWinner}`);
+  lines.push(`- Per-winner amount per investment year: $${payload.config.perWinner}`);
   lines.push(`- Annual budget mode: $${payload.config.annualBudget}`);
   lines.push("");
   lines.push("## Top Scenarios");

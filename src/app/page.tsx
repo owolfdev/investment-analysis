@@ -60,6 +60,7 @@ interface SimulationRunParams {
   startYearMax: number;
   endYear: number;
   perWinner: number;
+  perWinnerMonthly?: number | null;
   annualIncreasePct: number | null;
   vehiclesPerYear: number | null;
   withdrawalStartYear: number | null;
@@ -152,7 +153,7 @@ export default function Home() {
     const startMin = parseInt(pathStartMin, 10);
     const startMax = parseInt(pathStartMax, 10);
     const endY = parseInt(pathEnd, 10);
-    const inv = parseFloat(pathInvestment);
+    const invMonthly = parseFloat(pathInvestment);
     const annualIncreasePct = pathAnnualIncreasePct.trim() ? parseFloat(pathAnnualIncreasePct) : NaN;
     const vehiclesPerYear = pathVehiclesPerYear.trim() ? parseInt(pathVehiclesPerYear, 10) : NaN;
     if (!pathStartMin || Number.isNaN(startMin) || startMin < 1980 || startMin > 2030) {
@@ -167,8 +168,8 @@ export default function Home() {
       setPathError("Enter a valid terminal end year (≥ end start)");
       return;
     }
-    if (!pathInvestment || !Number.isFinite(inv) || inv <= 0) {
-      setPathError("Enter a positive investment per winner");
+    if (!pathInvestment || !Number.isFinite(invMonthly) || invMonthly <= 0) {
+      setPathError("Enter a positive monthly investment per winner");
       return;
     }
     if (pathAnnualIncreasePct.trim() && (!Number.isFinite(annualIncreasePct) || annualIncreasePct < 0)) {
@@ -186,11 +187,12 @@ export default function Home() {
     setSaveSimPath(null);
     setPathLoading(true);
     try {
+      const perWinnerAnnual = invMonthly * 12;
       const params = new URLSearchParams({
         startYearMin: String(startMin),
         startYearMax: String(startMax),
         endYear: String(endY),
-        perWinner: String(inv),
+        perWinner: String(perWinnerAnnual),
       });
       if (Number.isFinite(annualIncreasePct) && annualIncreasePct >= 0) {
         params.set("annualIncreasePct", String(annualIncreasePct));
@@ -212,7 +214,8 @@ export default function Home() {
         startYearMin: startMin,
         startYearMax: startMax,
         endYear: endY,
-        perWinner: inv,
+        perWinner: perWinnerAnnual,
+        perWinnerMonthly: invMonthly,
         annualIncreasePct: Number.isFinite(annualIncreasePct) && annualIncreasePct >= 0 ? annualIncreasePct : null,
         vehiclesPerYear: Number.isInteger(vehiclesPerYear) ? vehiclesPerYear : null,
         withdrawalStartYear: Number.isInteger(wStart) && Number.isFinite(wPct) && wPct > 0 && wPct <= 100 ? wStart : null,
@@ -398,9 +401,9 @@ export default function Home() {
                 </div>
                 <div className="space-y-1">
                   <Label htmlFor="path-investment" className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
-                    $ per winner
+                    $ per winner / month
                   </Label>
-                  <p className="text-xs text-zinc-500 dark:text-zinc-400">Amount in each narrative winner, per cohort.</p>
+                  <p className="text-xs text-zinc-500 dark:text-zinc-400">Monthly amount per winner. The simulation annualizes it by multiplying by 12.</p>
                   <Input
                     id="path-investment"
                     type="number"
@@ -435,7 +438,7 @@ export default function Home() {
                   <Label htmlFor="path-annual-increase-pct" className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
                     Annual increase %
                   </Label>
-                  <p className="text-xs text-zinc-500 dark:text-zinc-400">Optional. Increase $ per winner each new cohort year.</p>
+                  <p className="text-xs text-zinc-500 dark:text-zinc-400">Optional. Increase the monthly per-winner amount for each new investment year.</p>
                   <Input
                     id="path-annual-increase-pct"
                     type="number"
